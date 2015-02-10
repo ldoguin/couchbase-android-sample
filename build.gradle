@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.14.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1"
+
+    defaultConfig {
+        applicationId "com.couchbase.devxp.sample.message"
+        minSdkVersion 19
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    // workaround for "duplicate files during packaging of APK" issue
+    // see https://groups.google.com/d/msg/adt-dev/bl5Rc4Szpzg/wC8cylTWuIEJ
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "http://files.couchbase.com/maven2/"
+    }
+}
+
+dependencies {
+    compile 'com.couchbase.lite:couchbase-lite-android:1.0.3.1'
+    compile 'com.couchbase.lite:couchbase-lite-java-listener:1.0.3.1'
+}

@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_add" android:title="Add"
+          android:orderInCategory="101" android:showAsAction="always"/>
+    <item android:id="@+id/switchSyncLayout" android:title=""
+          android:showAsAction="always" android:actionLayout="@layout/switch_sync" />
+</menu>
